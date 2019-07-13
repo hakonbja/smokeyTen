@@ -1,0 +1,31 @@
+/* slideLeft animation */
+
+  /* slideLeft enter */
+  .enter,
+  .appear {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  .enter.enterActive,
+  .appear.appearActive {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 500ms ease-out 300ms;
+  }
+
+  .appear.appearActive {
+    transition: all 500ms ease-out 0ms;
+  }
+  
+  /* slideLeft exit */
+  .exit {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .exit.exitActive {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 500ms ease-in;
+  }

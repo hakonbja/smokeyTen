@@ -1,0 +1,174 @@
+@import './variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+.background {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-color: #E5E5E5;
+  background-blend-mode: color-burn;
+  background-position: center;
+  z-index: -1;
+}
+
+.background::before {
+  content: "";
+  background-color: $background-blue;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  position: fixed;
+}
+
+main {
+  // flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 0;
+  // overflow-y: hidden;
+  // overflow-y: auto;
+  // padding-top: 80px;
+}
+
+
+// @media screen and (max-width: 950px) {
+//   main {
+//     overflow-y: scroll;
+//     padding-top: calc(80px + 1rem);
+//   }
+// }
+
+// main > *:first-child {
+//   max-height: calc(100vh - 157px);
+//   width: 100%;
+//   margin: 1rem 4.5rem;
+//   position: relative;
+//   flex-grow: 1;
+// }
+
+main > *:nth-child(2) {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 950px) {
+  main {
+    padding-top: 80px;
+  }
+}
+
+/* Fade animations */
+
+  /* appear - on page load */
+  .fade-appear {
+    opacity: 0;
+  }
+
+  .fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity 300ms linear;
+  }
+
+  /* enter */
+  .fade-enter {
+    opacity: 0;
+  }
+
+  .fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms linear ;
+  }
+
+  /* exit */
+  .fade-exit {
+    opacity: 1;
+  }
+
+  .fade-exit-active {
+    opacity: 0;
+    transition: opacity 500ms linear;
+  }
+
+  .fade-exit-done {
+    opacity: 0;
+  }
+
+/* slideUp animation */
+
+  /* slideUp enter + appear */
+  .slideUp-enter,
+  .slideUp-appear {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  .slideUp-enter.slideUp-enter-active,
+  .slideUp-appear.slideUp-appear-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 500ms ease-out;
+  }
+  
+  
+ 
+
+
+
+/* Render animations for artists list */
+
+  .artistsList-enter {
+    opacity: 0.01;
+    max-height: 0;
+    li {
+      opacity: 0.01;
+      visibility: hidden;
+    }
+  }
+
+  .artistsList-enter-active {
+    opacity: 1;
+    transition: all 500ms;
+    max-height: 500px;
+    li {
+      opacity: 1;
+      visibility: visible;
+      transition: all 300ms;
+    }
+  }
+
+  .artistsList-exit {
+    opacity: 1;
+    max-height: 500px;
+    li {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .artistsList-exit-active {
+    opacity: 0.01;
+    transition: all 500ms;
+    max-height: 0;
+    li {
+      transition: all 500ms;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }

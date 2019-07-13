@@ -1,0 +1,32 @@
+@import './variables.scss';
+
+footer {
+  background-color: $black-backgr;
+  width: 100%;
+  height: 45px;
+  position: relative;
+  bottom: 0;
+  z-index: 2;
+  // margin-top: 0.5rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.social {
+  position: relative;
+  top: 3px;
+  
+  li {
+    color: white;
+    display: inline-block;
+    margin-right: 1.5rem;
+  }
+}
+
+.email {
+  position: relative;
+  top: 1px;
+}

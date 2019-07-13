@@ -1,0 +1,158 @@
+
+/* Font import */
+
+@font-face {
+  font-family: "Neptune";
+  src: url(./assets/fonts/neptune.otf);
+}
+
+@font-face {
+  font-family: 'Franklin Gothic';
+  src: url(./assets/fonts/Franklin-Gothic-Regular.ttf);
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Franklin Gothic';
+  src: url(./assets/fonts/Franklin-Gothic-Bold.ttf);
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Franklin Gothic';
+  src: url(./assets/fonts/Franklin-Gothic-Italic.ttf);
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Mixin */
+
+@mixin addBottomPadding($font-size) {
+  &::after {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    padding-bottom: calc(#{$font-size}/4);
+  }
+
+  
+  @media (hover: none) and (pointer: coarse) {
+    padding: calc(#{$font-size}/9.1) 0;
+    &::after {
+      margin-top: calc(#{$font-size}/6.4 * -1);
+      padding-bottom: 0;
+    }
+    
+    @media all and (min--moz-device-pixel-ratio:0) and (max-width: 950px) {
+      &::after {
+        margin-top: calc(#{$font-size}/6.4 * -1);
+        padding-bottom: 0;
+      }
+    }
+
+  }
+}
+
+/* Scrollbar styling */
+
+* {
+  scrollbar-color: rgb(209, 209, 209) rgba(255, 255, 255, 0);
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar { 
+  display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff00;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(209, 209, 209);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(189, 189, 189); 
+}
+
+@media (hover: none) and (pointer: coarse) { // is a touch device
+  ::-webkit-scrollbar { 
+    display: none; 
+  }
+}
+
+/* Universal styling */
+
+h1,
+h2,
+h3,
+h4 {
+  color: white;
+  font-family: 'Neptune', sans-serif;
+  text-transform: uppercase;
+}
+
+p,
+li {
+  color: black;
+}
+
+h1 {
+  font-size: 4em;
+  @include addBottomPadding(4rem);
+}
+
+h2 {
+  font-size: 3em;
+  @include addBottomPadding(3rem);
+}
+
+h3 {
+  font-size: 1.75em;
+  @include addBottomPadding(1.75rem);
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+li {
+  font-size: 1.5em;
+}
+
+p, li {
+  font-family: 'Franklin Gothic' , sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* Import other stylesheets */
+@import './assets/style/variables.scss';
+@import './assets/style/App.module.scss';
+// @import './assets/style/Home.scss';
+// @import './assets/style/Artists.scss';
+// @import './assets/style/Header.scss';
+// @import './assets/style/Footer.scss';
+@import './assets/style/responsive.scss';

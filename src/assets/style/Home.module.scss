@@ -1,0 +1,147 @@
+@import 'variables.scss';
+
+.home {
+  display: grid;
+  grid-template-columns: repeat(2, 40vw);
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  overflow-y: initial;
+
+  h3 {
+    line-height: 1.2;
+  }
+}
+
+.ribbonWrapper {
+  --skew: 15deg;
+  transform: skewX(var(--skew));
+  width: 375px;
+  min-width: min-content;
+  height: 100%;
+  position: relative;
+  left: 15%;
+  @media screen and (max-width: 1190px) {
+    left: 0;
+  }
+  @media screen and (max-width: 1060px) {
+    left: -30px;
+    --skew: 10deg;
+    width: 330px;
+  }
+}
+
+.ribbon {
+  background-color: $black-light;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.ribbonContent {
+  height: 525px;
+  padding: 0 1.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  h3 {
+    font-size: 2.5em;
+    transform: skewX(calc(var(--skew) * -1));
+  }
+}
+
+.orange {
+  color: $orange;
+}
+
+.dateWrapper {
+  // position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.border {
+  text-align: center;
+  border: solid white 0.6em;
+  width: min-content;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.date {
+  h1 {
+    font-size: 6em;
+  }
+}
+
+.line {
+  background-color: white;
+  width: 95%;
+  height: 4px;
+  margin: 0 auto;
+}
+
+/* For mobile */
+
+@media screen and (max-width: 950px) {
+  .home {
+    font-size: 12px;
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
+
+  h3 {
+    font-size: 3em;
+    // background-color: rgba(255,255,255,0.5);
+  }
+
+  .orange {
+    --backwards-slant: 6%;
+    --forwards-slant: 1%;
+    clip-path: polygon(calc(0% - var(--backwards-slant)) 0, calc(var(--forwards-slant) + 100%) 0, calc(var(--backwards-slant) + 100%) 100%, calc(0% - var(--forwards-slant)) 100%);
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      bottom: 0;
+      right: -10%;
+      left: -10%;
+      background-color: $black-light;
+      z-index: -1;
+
+      @media (hover: none) and (pointer: coarse) {
+        top: -3px;
+        bottom: 7px;
+        right: -10%;
+        left: -10%;
+      }
+    }
+  }
+
+  .textContainer {
+    padding: 0 1rem;
+
+    h3 {
+      margin-bottom: 1rem;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    &:nth-of-type(1) {
+      margin-bottom: 1.5rem;
+    }
+
+    &:nth-of-type(3) {
+      margin-top: 1.5em;
+    }
+  }
+}
+
+

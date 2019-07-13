@@ -1,0 +1,54 @@
+// @import 'variables.scss';
+
+.artists {
+  // overflow-x: hidden; 
+  max-height: calc(100vh - 157px);
+  margin: 1rem 4.5rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-column-gap: 20px;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    " list info ";
+
+  @media all and (min--moz-device-pixel-ratio:0) {
+    // padding-bottom: 45px;    
+  }
+
+  @media screen and (min-width: 950px) {
+    overflow: hidden;
+  }
+  
+  @media screen and (max-width: 950px) {
+    display: block;
+    margin: 0.5rem 0;
+    height: max-content;
+    max-height: initial;
+  }
+   
+  /* Hover media query */
+
+  @media not all and (hover: none) {
+    .list > div {
+      cursor: pointer;
+    }
+
+    .image-wrapper {
+      // transition: transform 500ms;
+      
+      &::before {
+        content: "";
+        background-color: rgba(255, 255, 255, 0.2);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        z-index: 3;
+      }
+    }
+        
+  }  
+}
+

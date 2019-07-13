@@ -1,0 +1,12 @@
+.enter,
+.appear {
+  // height: 0;
+  clip-path: inset(0 0 100% 0);
+}
+
+.enter.enterActive,
+.appear.appearActive {
+  // height: 100%;
+  clip-path: inset(0 0 0 0);
+  transition: all 500ms ease-out 0ms;
+}

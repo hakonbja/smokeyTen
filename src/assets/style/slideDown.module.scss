@@ -1,0 +1,28 @@
+/* slideDown animation */
+
+  /* slideDown enter */
+  .enter,
+  .appear {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  .enter.enterActive,
+  .appear.appearActive {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 500ms ease-out;
+  }
+  
+
+  /* slideDown exit */
+  .exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .exit.exitActive {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 500ms ease-in;
+  }

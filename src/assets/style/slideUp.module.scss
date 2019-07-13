@@ -1,0 +1,35 @@
+/* CSSTransition classes for slideUp */
+  
+  /* Desktop */
+  @media screen and (min-width: 950px) {
+      /* slideUp enter + appear */
+      .enter,
+      .appear {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+  
+      .enter.enterActive,
+      .appear.appearActive {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 500ms ease-out;
+      }
+
+       /* slideUp exit */
+      .exit {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .exit.exitActive {
+        opacity: 0;
+        transform: translateY(100%);
+        transition: all 500ms ease-in;
+      }
+    }
+  
+    /* Mobile */
+    @media screen and (max-width: 950px) {
+  
+    }
