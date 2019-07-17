@@ -139,7 +139,7 @@ header {
     position: relative;
     max-height: 80px;
     overflow: hidden;
-    padding-top: 1rem;
+    // padding-bottom: 1rem;
     padding-top: 80px;
     background-color: $black-light;
     display: block;
@@ -150,6 +150,14 @@ header {
       display: block;
       text-align: center;
       height: initial;
+    }
+
+    a:first-of-type {
+      margin-top: 0.5rem;
+    }
+
+    a:last-of-type {
+      margin-bottom: 0.5rem;
     }
   }
 
