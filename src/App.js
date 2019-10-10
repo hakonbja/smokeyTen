@@ -43,7 +43,7 @@ class App extends React.Component {
   componentDidMount() {
     this.fetchWPArtists();
     window.addEventListener("resize", this.onResize);
-    window.addEventListener("scroll", this.handleScroll);
+    // window.addEventListener("scroll", this.handleScroll); // causes bugs on iPhone
   }
 
   componentDidUpdate() {
