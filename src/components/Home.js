@@ -26,7 +26,7 @@ const Home = (props) =>(
               <div className={styles.ribbonContent}>
                 <h3><span className={styles.orange}>5 parties</span> with live music</h3>
                 <h3>2 days of <span className={styles.orange}>workshops</span></h3>
-                <h3>register in <span className={styles.orange}>january 2020</span></h3>
+                <h3>register on <span className={styles.orange}>january 11th</span></h3>
               </div>
             </CSSTransition>
             </div>
@@ -64,7 +64,7 @@ const Home = (props) =>(
 
       {props.onMobile && (
         <div className={styles.textContainer}>
-          <h3>register in <span className={styles.orange}>january&nbsp;2020</span></h3>
+          <h3>register on <span className={styles.orange}>january&nbsp;11th</span></h3>
         </div>
       )}
 
